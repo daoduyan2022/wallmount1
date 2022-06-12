@@ -1,0 +1,187 @@
+﻿<Window x:Class="WallMount1.Setup_Model"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WallMount1"
+        mc:Ignorable="d"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="Setup_Model" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1.5*"/>
+            <RowDefinition Height="10*"/>
+        </Grid.RowDefinitions>
+        <StackPanel>
+            <ToolBar BorderBrush="LightSlateGray">
+                <Label Content="Model:" FontSize="12" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBox Name="SelectModel" Width="100" Height="20" SelectionChanged="SelectModel_SelectionChanged" VerticalAlignment="Center" BorderBrush="LightGray">
+                    <ComboBoxItem Content="Black"/>
+                    <ComboBoxItem Content="White"/>
+
+                </ComboBox>
+                <Button Name="btn_add" Cursor="Hand" Click="btn_add_Click" Margin="1,5" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\btn_add.jpg" Width="20" Height="20"/>
+                </Button>
+                <Button Name="btn_sub" Cursor="Hand" Click="btn_sub_Click" Margin="1,1" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\sub.jpg" Width="20" Height="20"/>
+                </Button>
+                
+                <Separator BorderBrush="SlateGray" BorderThickness="1"/>
+                
+                <Label Content="Stream:" FontSize="12" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBox Name="SelectStream" Width="100" Height="20" SelectionChanged="SelectStream_SelectionChanged" VerticalAlignment="Center" BorderBrush="LightGray">
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+
+                </ComboBox>
+                <Button Name="btn_addStream" Cursor="Hand" Click="btn_addStream_Click" Margin="1,5" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\btn_add.jpg" Width="20" Height="20"/>
+                </Button>
+                <Button Name="btn_subStream" Cursor="Hand" Click="btn_subStream_Click" Margin="1,1" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\sub.jpg" Width="20" Height="20"/>
+                </Button>
+
+                <Separator BorderBrush="SlateGray" BorderThickness="1"/>
+
+                <Label Content="Step:" FontSize="12" Margin="0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                <ComboBox Name="SelectStep" Width="100" Height="20" SelectionChanged="SelectStep_SelectionChanged" VerticalAlignment="Center" BorderBrush="LightGray">
+                    <ComboBoxItem Content="1"/>
+                    <ComboBoxItem Content="2"/>
+
+                </ComboBox>
+                <Button Name="btn_addStep" Cursor="Hand" Click="btn_addStep_Click" Margin="1,5" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\btn_add.jpg" Width="20" Height="20"/>
+                </Button>
+                <Button Name="btn_subStep" Cursor="Hand" Click="btn_subStep_Click" Margin="1,1" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\sub.jpg" Width="20" Height="20"/>
+                </Button>
+
+                <Separator BorderBrush="SlateGray" BorderThickness="1"/>
+
+                <Button Name="btn_cam" Cursor="Hand" Click="btn_cam_Click" Margin="1,5" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\cam.jpg" Width="20" Height="20"/>
+                </Button>
+                <Button Name="btn_getImage" Cursor="Hand" Click="btn_getImage_Click" Margin="1,1" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\image.jpg" Width="20" Height="20"/>
+                </Button>
+                <Button Name="btn_save" Cursor="Hand" Click="btn_save_Click" Margin="1,1" VerticalAlignment="Center">
+                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\save.jpg" Width="20" Height="20"/>
+                </Button>
+
+
+            </ToolBar>
+        </StackPanel>
+        <Grid Grid.Row="1" Margin="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="0.9*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <GroupBox Header="Camera viewer" Margin="1,1,1,1" FontWeight="Bold" BorderBrush="Black">
+                    <Image Name="imageSetUp">
+
+                    </Image>
+                </GroupBox>
+            </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel>
+                    <GroupBox Header="ROI" Margin="1,1,1,1" FontWeight="DemiBold" BorderBrush="Gray">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Index:"/>
+                                <ComboBox Name="SelectIndexRoi" Width="50" Height="20" SelectionChanged="SelectIndexRoi_SelectionChanged" VerticalAlignment="Center" BorderBrush="LightGray">
+
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                <Label Content="X:"/>
+                                <syncfusion:UpDown Name="tbx_XCoordRoi" BorderBrush="Gray" Width="60" Height="20" ZeroColor="Black" NumberDecimalDigits="0"/>
+                                <Label Content="Y:" Margin="5,0,0,0"/>
+                                <syncfusion:UpDown Name="tbx_YCoordRoi" BorderBrush="Gray" Width="60"  Height="20" ZeroColor="Black" NumberDecimalDigits="0"/>
+                                <Label Content="W:" Margin="5,0,0,0"/>
+                                <syncfusion:UpDown Name="tbx_WRoi" BorderBrush="Gray" Width="60"  Height="20" ZeroColor="Black" ApplyZeroColor="False" NumberDecimalDigits="0"/>
+                                <Label Content="H:" Margin="5,0,0,0"/>
+                                <syncfusion:UpDown Name="tbx_HRoi" BorderBrush="Gray" Width="60"  Height="20" ZeroColor="Black" NumberDecimalDigits="0"/>
+                            </StackPanel>
+                        </StackPanel>
+                        
+                        
+                        
+                    </GroupBox>
+                    
+                    <GroupBox Header="CAMERA" Margin="1,20,1,1" FontWeight="DemiBold" BorderBrush="Gray">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Device:" Margin="0,0,27,0"/>
+                                <ComboBox Name="cbx_listDevice" Width="200" Height="20"/>
+                                <Button Name="btn_CamDevice" Width="20" Height="20" Click="btn_CamDevice_Click" Margin="20,0,0,0">
+                                    <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\camdevice.jpg"/>
+                                </Button>
+                            </StackPanel>
+                            <StackPanel>
+                                <StackPanel Orientation="Horizontal">
+                                    <Label Content="File Config:"/>
+                                    <TextBox Name="tbx_FileConfig" Width="200" Height="20" Margin="5,0,0,0"/>
+                                    <Button Name="btn_download" Width="20" Height="20" Click="btn_download_Click" Margin="20,0,0,0">
+                                        <Image Source="F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\ImageItem\download.jpg"/>
+                                    </Button>
+                                </StackPanel>
+                                
+                            </StackPanel>
+                            
+
+                        </StackPanel>
+                    </GroupBox>
+                    <GroupBox Header="Light" Margin="1,1,1,1" FontWeight="DemiBold" BorderBrush="Gray">
+                        <StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label Content="Port:"/>
+                                <ComboBox Name="Port" Width="50" Height="20" SelectionChanged="Port_SelectionChanged" VerticalAlignment="Center" BorderBrush="LightGray">
+
+                                </ComboBox>
+                            </StackPanel>
+
+                            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                                <Label Content="CH1:"/>
+                                <syncfusion:UpDown Name="nbud_Ch1" BorderBrush="Gray" Width="50" Height="20" ZeroColor="Black" NumberDecimalDigits="0"/>
+                                <Label Content="CH2:" Margin="5,0,0,0"/>
+                                <syncfusion:UpDown Name="nbud_Ch2" BorderBrush="Gray" Width="50"  Height="20" ZeroColor="Black" NumberDecimalDigits="0"/>
+                                <Label Content="CH3:" Margin="5,0,0,0"/>
+                                <syncfusion:UpDown Name="nbud_Ch3" BorderBrush="Gray" Width="50"  Height="20" ZeroColor="Black" ApplyZeroColor="False" NumberDecimalDigits="0"/>
+                                <Label Content="CH4:" Margin="5,0,0,0"/>
+                                <syncfusion:UpDown Name="nbud_Ch4" BorderBrush="Gray" Width="50"  Height="20" ZeroColor="Black" NumberDecimalDigits="0"/>
+                            </StackPanel>
+                        </StackPanel>
+
+
+
+                    </GroupBox>
+
+                </StackPanel>
+                    
+
+                    
+                <!--<StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+                        <Label Content="Total product:" FontWeight="Bold"/>
+                        <TextBox Name="totalOfProduct"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+                        <Label Content="Fail product:" FontWeight="Bold"/>
+                        <TextBox Name="FailOfProduct"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+                        <Label Content="Current result" FontWeight="Bold"/>
+                        <Label Name="LableResult" Content="READY" Width="150" Height="50" Background="#FF009700" FontSize="30" HorizontalContentAlignment="Center" Margin="5" FontWeight="Bold"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Margin="5,5,5,5">
+                        <Label Content="Calid coordinate" FontWeight="Bold"/>
+                    </StackPanel>
+                </StackPanel>-->
+
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>
