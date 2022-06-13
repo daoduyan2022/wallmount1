@@ -11,21 +11,30 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-
-namespace WallMount1
+using WallMount1.UI;
+namespace WallMount1.UI
 {
     /// <summary>
     /// Interaction logic for Setup_Model.xaml
     /// </summary>
     public partial class Setup_Model : Window
     {
-        public Setup_Model()
+        MainWindow mainWindow = null;
+        public Setup_Model(MainWindow _mainWindow)
         {
             InitializeComponent();
+            mainWindow = _mainWindow;
         }
 
         private void btn_add_Click(object sender, RoutedEventArgs e)
         {
+            NewModel newModelWindow = new NewModel(mainWindow);
+            newModelWindow.ShowDialog();
+            foreach(string model in mainWindow._ListModel)
+            {
+                cbx_SelectModel.Items.Add(model);
+            }
+
 
         }
 
@@ -74,10 +83,6 @@ namespace WallMount1
 
         }
 
-        private void SelectModel_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
 
         private void btn_save_Click(object sender, RoutedEventArgs e)
         {
@@ -100,6 +105,11 @@ namespace WallMount1
         }
 
         private void Port_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
+
+        private void cbx_SelectModel_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
 
         }

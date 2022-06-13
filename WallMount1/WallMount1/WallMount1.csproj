@@ -61,9 +61,27 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Setup_Model.xaml.cs">
+    <Compile Include="UI\Hardware_Config.xaml.cs">
+      <DependentUpon>Hardware_Config.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainController\MainController.cs" />
+    <Compile Include="UI\NewModel.xaml.cs">
+      <DependentUpon>NewModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Setup_Model.xaml.cs">
       <DependentUpon>Setup_Model.xaml</DependentUpon>
     </Compile>
+    <Page Include="UI\Hardware_Config.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Login.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -76,7 +94,11 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Setup_Model.xaml">
+    <Page Include="UI\NewModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UI\Setup_Model.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

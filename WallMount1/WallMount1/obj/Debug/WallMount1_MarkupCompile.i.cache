@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 F:\Vision Machine Learning\Foxconn\WallMount1\WallMount1\WallMount1\App.xaml
-21340695022
+51091841376
 
-7-1424333359
+11-219438636
 15-1155739674
-MainWindow.xaml;Setup_Model.xaml;
+UI\Hardware_Config.xaml;UI\Login.xaml;MainWindow.xaml;UI\NewModel.xaml;UI\Setup_Model.xaml;
 
 True
 

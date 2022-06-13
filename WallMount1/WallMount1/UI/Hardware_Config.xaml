@@ -1,0 +1,43 @@
+﻿<Window x:Class="WallMount1.UI.Hardware_Config"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WallMount1.UI"
+        mc:Ignorable="d"
+        Title="Hardware_Config" Height="450" Width="800">
+        
+    <Grid>
+        <StackPanel>
+            <GroupBox Header="PLC config" Margin="5,5,5,5" BorderBrush="Black">
+                <StackPanel Orientation="Horizontal">
+                    <StackPanel>
+                        <Label Content="IP address:" Margin="5,5,5,5"/>
+                        <Label Content="Port:" Margin="5,5,5,5"/>
+                        <Label Content="Bit trigger:" Margin="5,5,5,5"/>
+                        <Label Content="Bit pass:" Margin="5,5,5,5"/>
+                        <Label Content="Bit fail:" Margin="5,5,5,5"/>
+                        <Label Content="Bit miss:" Margin="5,5,5,5"/>
+                        <Label Content="X Offset Register:" Margin="5,5,5,5"/>
+                        <Label Content="Y Offset Register:" Margin="5,5,5,5"/>
+                        <Label Content="R Offset Register:" Margin="5,5,5,5"/>
+                        
+                        
+                    </StackPanel>
+                    <StackPanel>
+                        <TextBox Name="tbx_IpAddress" Width="200" Height="20" Margin="5,10,5,5"/>
+                        <TextBox Name="tbx_Port" Width="200" Height="20" Margin="5,10,5,5"/>
+                        <TextBox Name="tbx_BitTrigger" Width="200" Height="20" Margin="5,10,5,5"/>
+                        <TextBox Name="tbx_BitPass" Width="200" Height="20" Margin="5,10,5,5"/>
+                        <TextBox Name="tbx_BitFail" Width="200" Height="20" Margin="5,10,5,5"/>
+                        <TextBox Name="tbx_BitMiss" Width="200" Height="20" Margin="5,15,5,5"/>
+                        <TextBox Name="tbx_XOffsetRegister" Width="200" Height="20" Margin="5,10,5,5"/>
+                        <TextBox Name="tbx_YOffsetRegister" Width="200" Height="20" Margin="5,12,5,5"/>
+                        <TextBox Name="tbx_ROffsetRegister" Width="200" Height="20" Margin="5,12,5,5"/>
+                    </StackPanel>
+                </StackPanel>
+                
+            </GroupBox>
+        </StackPanel>
+    </Grid>
+</Window>
